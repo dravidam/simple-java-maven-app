@@ -1,5 +1,6 @@
 ---
 - hosts: buildserver
+  become: true
   vars:
     - warName: my-app-1.0-SNAPSHOT.jar
     - tomcat_version: 8.5.53
@@ -7,3 +8,4 @@
   tasks:
     - name: Copy WAR/JAR to Remote server
       copy: src=target/{{ warName }} dest={{ warRemotePath }}/{{warName }} owner=tomcat group=tomcat
+      
