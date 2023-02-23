@@ -1,6 +1,5 @@
 ---
 - hosts: buildserver
-  become: true
   vars:
     - warName: my-app-1.0-SNAPSHOT.jar
     - tomcat_version: 8.5.53
